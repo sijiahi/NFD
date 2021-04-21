@@ -1,6 +1,6 @@
-# project nfd (0.7.0) configured on Tue Sep 29 19:08:36 2020 by
+# project nfd (0.7.0) configured on Mon Oct  5 02:09:02 2020 by
 # waf 2.0.19 (abi 20, python 30609f0 on linux)
-# using ./waf configure
+# using ./waf configure --with-test
 #
 ----------------------------------------
 Setting top to
@@ -710,7 +710,13 @@ Trying pattern boost_filesystem(-gcc[0-9]{0,3})-mt.so$
 Trying pattern boost_filesystem-mt.so$
 Trying pattern boost_filesystem.so$
 Found boost lib /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-boost_system boost_program_options boost_filesystem
+Trying pattern boost_unit_test_framework(-gcc[0-9]{0,3})-mt-1_65_1.so$
+Trying pattern boost_unit_test_framework-mt-1_65_1.so$
+Trying pattern boost_unit_test_framework(-gcc[0-9]{0,3})-mt.so$
+Trying pattern boost_unit_test_framework-mt.so$
+Trying pattern boost_unit_test_framework.so$
+Found boost lib /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so
+boost_system boost_program_options boost_filesystem boost_unit_test_framework
 -------------------------------------------------
 Checking for boost linkage
 ==>
@@ -724,7 +730,7 @@ int main() { boost::system::error_code c; }
 ['/usr/bin/g++', '-std=c++14', '-I/usr/include', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_595f4e7318450590c0c26e80efd1c5bd/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_595f4e7318450590c0c26e80efd1c5bd/testbuild/testprog[0m
 
-['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_595f4e7318450590c0c26e80efd1c5bd/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_program_options', '-lboost_filesystem']
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_595f4e7318450590c0c26e80efd1c5bd/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_program_options', '-lboost_filesystem', '-lboost_unit_test_framework']
 ok
 -------------------------------------------------
 Checking if Unix sockets are supported
@@ -759,5 +765,202 @@ int main(int argc, char **argv) {
 yes
 -------------------------------------------------
 Checking for WebSocket++ includes
-Not found
-from /home/sijia/NFD: WebSocket++ not found
+0.8.1
+-------------------------------------------------
+Checking supported CXXFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_2d323830f8213f5010cd0283cd5aab6a/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-O2', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_2d323830f8213f5010cd0283cd5aab6a/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2d323830f8213f5010cd0283cd5aab6a/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_2d323830f8213f5010cd0283cd5aab6a/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_d8fd32f623915a83d2b9bc58b1fd90b4/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-g', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_d8fd32f623915a83d2b9bc58b1fd90b4/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_d8fd32f623915a83d2b9bc58b1fd90b4/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_d8fd32f623915a83d2b9bc58b1fd90b4/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_20183fb052dd4b4c86b4ac14a23230b5/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-pedantic', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_20183fb052dd4b4c86b4ac14a23230b5/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_20183fb052dd4b4c86b4ac14a23230b5/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_20183fb052dd4b4c86b4ac14a23230b5/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_3460e356deb611b8010849f0d784ffa8/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wall', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_3460e356deb611b8010849f0d784ffa8/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_3460e356deb611b8010849f0d784ffa8/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_3460e356deb611b8010849f0d784ffa8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_748e12438830f1adcaf15e58be476cff/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wextra', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_748e12438830f1adcaf15e58be476cff/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_748e12438830f1adcaf15e58be476cff/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_748e12438830f1adcaf15e58be476cff/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_f2324912f9aac224cd8da0b3f8a72c22/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wcatch-value=2', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_f2324912f9aac224cd8da0b3f8a72c22/testbuild/test.cpp.1.o']
+err: g++: error: unrecognized command line option ‘-Wcatch-value=2’
+
+from /home/sijia/NFD: Test does not build: Traceback (most recent call last):
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Configure.py", line 333, in run_build
+    bld.compile()
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+waflib.Errors.BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+from /home/sijia/NFD: The configuration failed
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_896e4c0a4a3161b934b658cca43bb9db/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wextra-semi', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_896e4c0a4a3161b934b658cca43bb9db/testbuild/test.cpp.1.o']
+err: g++: error: unrecognized command line option ‘-Wextra-semi’; did you mean ‘-Wextra’?
+
+from /home/sijia/NFD: Test does not build: Traceback (most recent call last):
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Configure.py", line 333, in run_build
+    bld.compile()
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+waflib.Errors.BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+from /home/sijia/NFD: The configuration failed
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_3e2273286c74d67c6e3ace5c863bd3e6/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wnon-virtual-dtor', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_3e2273286c74d67c6e3ace5c863bd3e6/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_3e2273286c74d67c6e3ace5c863bd3e6/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_3e2273286c74d67c6e3ace5c863bd3e6/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_5ee5a02cd49048f071ca54bdde5ea47f/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wno-unused-parameter', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_5ee5a02cd49048f071ca54bdde5ea47f/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_5ee5a02cd49048f071ca54bdde5ea47f/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_5ee5a02cd49048f071ca54bdde5ea47f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_30bd2cac52c53ef6b411d298d4dbc967/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-fdiagnostics-color', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_30bd2cac52c53ef6b411d298d4dbc967/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_30bd2cac52c53ef6b411d298d4dbc967/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_30bd2cac52c53ef6b411d298d4dbc967/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_565e97d89275f5aea5dd3d86f7180bfb/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++14', '-Werror', '-Wredundant-tags', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_565e97d89275f5aea5dd3d86f7180bfb/testbuild/test.cpp.1.o']
+err: g++: error: unrecognized command line option ‘-Wredundant-tags’; did you mean ‘-Wredundant-decls’?
+
+from /home/sijia/NFD: Test does not build: Traceback (most recent call last):
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Configure.py", line 333, in run_build
+    bld.compile()
+  File "/home/sijia/NFD/.waf3-2.0.19-1f3c580272b15a03d2566843c5fe872a/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+waflib.Errors.BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+from /home/sijia/NFD: The configuration failed
+-O2 -g -pedantic -Wall -Wextra -Wnon-virtual-dtor -Wno-unused-parameter -fdiagnostics-color
+-------------------------------------------------
+Checking supported LINKFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_4242a8a6d710b97a0f9dbe637f5bdebc/test.cpp[0m
+
+['/usr/bin/g++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wnon-virtual-dtor', '-Wno-unused-parameter', '-fdiagnostics-color', '-std=c++14', '-DHAVE_NDN_CXX=1', '-DHAVE_SYSTEMD=1', '-DHAVE_LIBRT=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_LIBPCAP=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '../test.cpp', '-c', '-o/home/sijia/NFD/build/.conf_check_4242a8a6d710b97a0f9dbe637f5bdebc/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_4242a8a6d710b97a0f9dbe637f5bdebc/testbuild/testprog[0m
+
+['/usr/bin/g++', '-fuse-ld=gold', '-Werror', '-Wl,-O1', 'test.cpp.1.o', '-o/home/sijia/NFD/build/.conf_check_4242a8a6d710b97a0f9dbe637f5bdebc/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+-Wl,-O1

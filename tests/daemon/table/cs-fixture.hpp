@@ -54,10 +54,8 @@ protected:
     if (modifyData != nullptr) {
       modifyData(*data);
     }
-
     data->wireEncode();
     cs.insert(*data, isUnsolicited);
-
     return data->getFullName();
   }
 

@@ -120,7 +120,6 @@ protected: // StatusDataset
   sendDataset(const Name& prefix, const T& payload)
   {
     BOOST_CONCEPT_ASSERT((ndn::WireEncodable<T>));
-
     this->sendDatasetReply(prefix, payload.wireEncode());
   }
 
